@@ -1,0 +1,9 @@
+{% extends "pdf/base.html" %}
+
+{% block content %}
+
+<h1>Bienvenue sur notre site creer votre CV en moins de 5 minutes</h1>
+<h2> clickez ici pour commencer <a href="{% url 'formulaire' %}" class="btn bg-info text-dark">commencer</a></h2>
+
+{% now "Y-m-d,  H:m:s" %}
+{% endblock %}

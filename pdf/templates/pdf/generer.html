@@ -1,0 +1,65 @@
+{% extends 'pdf/base.html' %}
+
+{% block content %}
+<div class="txt row">
+   
+    <div class="col-md-4 part1 text-white">
+        <div class="ted bg-info">
+    
+        </div>
+        {{ profile.name }} <br>
+        <img src="{{ profile.image.url }}" width="100" height="100" alt="profile">
+        <h4 class="ted">CONTACT</h4>
+       Email: {{ profile.email }} <br>Phone: {{ profile.phone }} <br>Address: {{ profile.address }}
+        <h4 class="ted">COMPETENCES</h4>
+        <ul>
+        {% for come in com %}
+            <li>{{ come }}</li>
+        {% endfor %}
+        </ul>
+        <h4 class="ted">LANGUES</h4>
+        <ul>
+            {% for lan in langue %}
+                <li>{{ lan }}</li>
+            {% endfor %}
+            </ul>
+        <h4 class="ted">INTERETS</h4>
+        <ul>
+            {% for int in interet %}
+                <li>{{ int }}</li>
+            {% endfor %}
+            </ul>
+
+    </div>
+    <div class="col-md-8 part2">
+        <h4 class="ted">OBJETIFS</h4>
+        <p class="text-muted">
+            {% for  exp in objectif %}
+            {{ exp }} <br>
+            {% endfor %}
+            </p>
+        <h4 class="ted" data-html="true" >EXPERIENCES</h4>
+        <p class="text-muted">
+        {% for  exp in experience %}
+        {{ exp }} <br>
+        {% endfor %}
+        </p>
+        <h4 class="ted">EDUCATIONS</h4>
+        <p class="text-muted">
+            {% for  exp in education %}
+            {{ exp }} <br>
+            {% endfor %}
+            </p>
+        <h4 class="ted">PROJECT</h4>
+        <p class="text-muted">
+            {% for  exp in project %}
+            {{ exp }} <br>
+            {% endfor %}
+            </p>
+
+
+    </div>
+</div>
+<p class="text-center text-muted"> DonaldCV generator <small>{% now "Y-m-d" %}</small> </p>
+
+{% endblock %}
